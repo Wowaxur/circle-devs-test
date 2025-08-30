@@ -1,0 +1,84 @@
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+form input,
+form textarea {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.2s ease;
+  resize: none;
+  &:focus {
+    border-color: #3498db;
+  }
+}
+
+form button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #2980b9;
+  }
+}
+
+form button[type="button"] {
+  background: #aaa;
+  &:hover { background: #888; }
+}
+
+form {
+  margin-bottom: 24px;
+}
+
+.items-grid {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+
+  /* 1 колонка по умолчанию (мобайл) */
+  grid-template-columns: 1fr;
+}
+
+/* На больших экранах >= 768px — 2 колонки */
+@media (min-width: 768px) {
+  .items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1440px) {
+  .items-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+

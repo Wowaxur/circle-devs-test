@@ -1,0 +1,80 @@
+@use './variables' as *;
+
+.app-shell {
+  height: 100vh; /* без скролла у body */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+
+  .brand {
+    font-weight: 700;
+  }
+
+  .nav {
+    display: flex;
+    gap: 12px;
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 0;
+  min-height: 0;
+}
+
+.app-sidebar {
+  border-right: 1px solid #eee;
+  padding: 12px;
+  overflow: auto;
+  min-height: 0;
+
+  .section {
+    & + .section {
+      margin-top: 16px;
+    }
+  }
+}
+
+.app-content {
+  padding: 16px;
+  overflow: auto;
+  min-height: 0;
+
+}
+
+.app-footer {
+  border-top: 1px solid #eee;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+  .app-sidebar {
+    display: none;
+  }
+}
+
+/* Большие экраны */
+@media (min-width: 1440px) {
+  .app-main {
+    grid-template-columns: 300px 1fr;
+  }
+}

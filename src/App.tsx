@@ -11,6 +11,7 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path="/public" element={<WelcomePage />} />
                     <Route path="/items" element={<ItemsPage />} />
+                    <Route path="*" element={<WelcomePage />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

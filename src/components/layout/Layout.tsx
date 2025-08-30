@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import type { PropsWithChildren } from 'react';
-import '../../styles/Layout.scss';
+import '../../styles/layout.scss';
 import Header from './header/Header.tsx';
 import Sidebar from './sidebar/Sidebar.tsx';
 import Footer from './footer/Footer.tsx';
